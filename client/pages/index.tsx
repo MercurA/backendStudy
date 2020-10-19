@@ -1,12 +1,9 @@
 import { useAuth0 } from '@auth0/auth0-react';
-// Component
-import Home from '@components/home/Home';
 import { IUser } from 'interfaces/IUserState';
 import Router from 'next/router';
 import React, { FunctionComponent, useEffect } from 'react';
 import { connect } from 'react-redux';
 
-// Redux
 import { dispatchUserToState } from '../redux/actions/user/creators';
 import { RootState } from '../redux/store';
 
@@ -33,7 +30,7 @@ const MainHome: FunctionComponent<IMainHomeProps> = ({ dispatchUserToState }) =>
         }
     }, [user, isAuthenticated]);
 
-    return <div>{isAuthenticated && <Home />}</div>;
+    return <div>{isAuthenticated && <div>{'PLACE YOUR COMPONENT HERE'}</div>}</div>;
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainHome);
