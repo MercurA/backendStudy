@@ -1,8 +1,9 @@
 import IFormData from '../../../interfaces/IFormState';
-import { IActions, SET_NAME } from './actionTypes';
+import { IActions, SET_NAME, SET_SPELLS } from './actionTypes';
 
 const initialState: IFormData = {
-    userInfo: []
+    userInfo: [],
+    spells: []
 };
 
 function formReducer(state = initialState, actions: IActions): IFormData {
@@ -11,6 +12,11 @@ function formReducer(state = initialState, actions: IActions): IFormData {
             return {
                 ...state,
                 userInfo: [...state.userInfo, ...[actions.payload]]
+            };
+        case SET_SPELLS:
+            return {
+                ...state,
+                spells: actions.payload
             };
         default: {
             return state;

@@ -10,9 +10,13 @@ interface LayoutProps {
 
 const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
     const classes = useStyle();
-    const { isLoading } = useAuth0();
+    const { isLoading, isAuthenticated } = useAuth0();
 
-    return <div className={classes.container}>{isLoading ? <Loading /> : children}</div>;
+    return (
+        <div className={classes.container}>
+            {!isAuthenticated && isLoading ? <Loading /> : children}
+        </div>
+    );
 };
 
 export default Layout;

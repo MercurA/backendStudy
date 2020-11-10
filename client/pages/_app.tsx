@@ -36,7 +36,10 @@ class Main extends App<ReduxWrapperAppProps<RootState>> {
                 domain={publicRuntimeConfig.domain}
                 clientId={publicRuntimeConfig.clientId}
                 redirectUri={publicRuntimeConfig.redirectUri}
-                onRedirectCallback={onRedirectCallback}>
+                onRedirectCallback={onRedirectCallback}
+                useRefreshTokens={true} // https://stackoverflow.com/questions/63537913/auth0-does-not-persist-login-on-page-refresh-for-email-password
+                cacheLocation="localstorage"
+                scope="read:current_user update:current_user_metadata">
                 <Provider store={store}>
                     <ThemeProvider theme={theme}>
                         <CssBaseline />
