@@ -1,4 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react';
+import ChatRoom from '@components/chatRoom/ChatRoom';
 import { IUser } from 'interfaces/IUserState';
 import Router from 'next/router';
 import React, { FunctionComponent, useEffect } from 'react';
@@ -41,7 +42,15 @@ const MainHome: FunctionComponent<IMainHomeProps> = ({ dispatchUserToState, spel
         }
     }, [spells]);
 
-    return <div>{isAuthenticated && <div>{'TEST'}</div>}</div>;
+    return (
+        <div>
+            {isAuthenticated && (
+                <div>
+                    <ChatRoom />
+                </div>
+            )}
+        </div>
+    );
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainHome);

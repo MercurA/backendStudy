@@ -22,11 +22,11 @@ const onRedirectCallback = (appState) => {
     }
 };
 class Main extends App<ReduxWrapperAppProps<RootState>> {
-    async componentDidMount(): Promise<void> {
-        // Remove the server-side injected CSS.
-        const jssStyles = document.querySelector('#jss-server-side');
-        jssStyles?.parentNode?.removeChild(jssStyles);
-    }
+    // async componentDidMount(): Promise<void> {
+    //     // Remove the server-side injected CSS.
+    //     const jssStyles = document.querySelector('#jss-server-side');
+    //     jssStyles?.parentNode?.removeChild(jssStyles);
+    // }
 
     public render() {
         const { Component, pageProps, store } = this.props;
