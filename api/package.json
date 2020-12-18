@@ -1,7 +1,7 @@
 {
   "name": "express-ts",
   "version": "1.0.0",
-  "description": "api with express/ts",
+  "description": "api with express/typescript",
   "main": "index.js",
   
   "scripts": {
