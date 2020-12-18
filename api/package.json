@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  
   "scripts": {
     "start": "nodemon ./src/server.ts",
     "build": "tsc --project ./",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "MercurA",
+  "author": "MercurA <constandacheh@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
