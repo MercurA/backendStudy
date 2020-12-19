@@ -1,12 +1,16 @@
-import express, {Request, Response, NextFunction} from "express";
+import express, { Request, Response, NextFunction } from "express";
+import asyncHandler from "../../../helpers/asyncHandler";
 
 const router = express.Router();
 
-router.get('/user', (req: Request, res: Response, next: NextFunction): void => {
+router.get('/user',
+    asyncHandler(async (req: Request, res: Response) => {
     res.send({
-        name: "John",
-        id: "1"
-    })
-})
+        success: true,
+        data: {
+            name: 'John'
+        }
+    })     
+}))
 
 export default router;
