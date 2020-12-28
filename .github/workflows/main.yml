@@ -11,8 +11,9 @@ jobs:
          uses: actions/checkout@master
          with:
           persist-credentials: false
-          working-directory: ./node-ts-api
+      
        - name: install
+       - working-directory: ./node-ts-api 
        - run: npm install
       
        - name: build
