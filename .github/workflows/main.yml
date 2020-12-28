@@ -13,7 +13,6 @@ jobs:
           persist-credentials: false
       
        - name: install
-       - working-directory: ./node-ts-api 
        - run: npm install
       
        - name: build
